@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/lib/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="~/lib/materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+    <nav class="orange lighten-1" role="navigation">
+        <ul class="right hide-on-med-and-down">
+            <li><a asp-action="Index" asp-controller="Shop">Sklep</a></li>
+        </ul>
+    </nav>
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <div class="row center">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by Grzegorz Kasperowicz
+            </div>
+        </div>
+    </footer>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

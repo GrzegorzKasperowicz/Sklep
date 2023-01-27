@@ -1,0 +1,126 @@
+﻿@model Sklep.Data.Model.Order
+
+@{
+    ViewData["Title"] = "Summary";
+    Layout = "~/Views/Shared/_CartLayout.cshtml";
+}
+
+<h5>Dziękujemy za złożenie zamówienia</h5>
+<br />
+<br />
+<div class="row">
+    <div class="col s6 m6">
+        <ul class="collection">
+            <li class="collection-item avatar">
+                <i class="material-icons circle green">receipt</i>
+                <span class="title"><b>Twój numer zamówienia to: @Model.IdOrder</b></span>
+                  <ul class="collection">
+                    <li class="collection-item avatar">
+                <p>
+                    <br>
+                    @Html.DisplayNameFor(model => model.OrderDate): <br>
+                    @Html.DisplayFor(model => model.OrderDate)<br><br>
+                    Wartość twojego zamówiania:<br>
+                            <b>@Html.DisplayFor(model => model.Total) zł</b>
+                        </p>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="col s6 m6">
+        <ul class="collection">
+            <li class="collection-item avatar">
+                <i class="material-icons circle green">portrait</i>
+                <span class="title"><b>Twoje Dane:</b></span>
+                <div class="row">
+                    <div class="col s6 m6">
+                    <p><br>@Html.DisplayNameFor(model => model.FirstName):</p>
+                    </div>
+                    <div class="col s6 m6">
+                        <p><br> @Html.DisplayFor(model => model.FirstName)</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6 m6">
+                        <p>@Html.DisplayNameFor(model => model.LastName):</p>
+                    </div>
+                    <div class="col s6 m6">
+                        <p>@Html.DisplayFor(model => model.LastName)</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6 m6">
+                        <p>@Html.DisplayNameFor(model => model.Street):</p>
+                    </div>
+                    <div class="col s6 m6">
+                        <p>@Html.DisplayFor(model => model.Street)</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6 m6">
+                        <p>@Html.DisplayNameFor(model => model.HouseNumber):</p>
+                    </div>
+                    <div class="col s6 m6">
+                        <p>@Html.DisplayFor(model => model.HouseNumber)</p>
+                    </div>
+                </div>
+                     <div class="row">
+                    <div class="col s6 m6">
+                        <p>@Html.DisplayNameFor(model => model.ApartmentNumber):</p>
+                    </div>
+                    <div class="col s6 m6">
+                        <p>@Html.DisplayFor(model => model.ApartmentNumber)</p>
+                    </div>
+                </div>
+                     <div class="row">
+                    <div class="col s6 m6">
+                        <p>@Html.DisplayNameFor(model => model.City):</p>
+                    </div>
+                    <div class="col s6 m6">
+                        <p>@Html.DisplayFor(model => model.City)</p>
+                    </div>
+                </div>
+                         <div class="row">
+                    <div class="col s6 m6">
+                        <p>@Html.DisplayNameFor(model => model.Province):</p>
+                    </div>
+                    <div class="col s6 m6">
+                        <p>@Html.DisplayFor(model => model.Province)</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6 m6">
+                        <p>@Html.DisplayNameFor(model => model.Country):</p>
+                    </div>
+                    <div class="col s6 m6">
+                        <p>@Html.DisplayFor(model => model.Country)</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6 m6">
+                        <p>@Html.DisplayNameFor(model => model.PhoneNumer):</p>
+                    </div>
+                    <div class="col s6 m6">
+                        <p>@Html.DisplayFor(model => model.PhoneNumer)</p>
+                    </div>
+                </div>
+                      <div class="row">
+                    <div class="col s6 m6">
+                        <p>@Html.DisplayNameFor(model => model.Email):</p>
+                    </div>
+                    <div class="col s6 m6">
+                        <p>@Html.DisplayFor(model => model.Email)</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+<h5>Zamówienie potwierdzone</h5>
+<p>Dziekujemy za złożenie zamówienia.</p>
+<p></p>
+<p>  Masz ochotę na więcej? Wróć do naszego sklepu:  @Html.ActionLink("Wróć do sklepu","Index", "Shop")</p>

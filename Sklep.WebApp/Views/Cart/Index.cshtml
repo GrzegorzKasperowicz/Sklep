@@ -1,0 +1,67 @@
+﻿@model Sklep.WebApp.Models.Shop.DataToCart
+@{
+    ViewData["Title"] = "Cart";
+    Layout = "~/Views/Shared/_CartLayout.cshtml";
+}
+<h4>Mój koszyk</h4>
+<div>
+    <table class="striped">
+        <tr>
+            <th>
+                
+            </th>
+            <th>
+                Nazwa towaru
+            </th>
+            <th>
+                Cena
+            </th>
+            <th>
+                Ilość
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.CartItem)
+        {
+            <tr>
+                <td>
+                   <a href="@Url.Action("Details",new {id=@item.Product.IdProduct})"> 
+                       <img alt="@item.Product.Title" src="@item.Product.Picture" height="60" width="50" /> </a>
+                </td>
+                <td>
+                    @*@item.Towar.Nazwa*@
+                    <a asp-action="Details" asp-controller="Shop" asp-routeid="@item.IdProduct">@item.Product.Title</a> 
+                </td>
+                <td>
+                    @String.Format("{0:F}", item.Product.Price) zł
+                </td>
+                <td>
+                    @String.Format("{0:F}", item.Quantity) szt
+                </td>
+                <td>
+                    <a href="#">Usuń</a>
+                </td>
+            </tr>
+        }
+    </table>
+    <h4></h4>
+</div>
+<div class="row">
+    <div class="col s8 m8"></div>
+    <div class="col s4 m4">
+        <div class="card blue-grey lighten-3">
+            <div class="card-content white-text">
+                <span class="card-title"><b>Razem:@String.Format("{0:F}", Model.Total) zł</b></span>
+                <p>
+                    Czas oczekiwania na wysyłkę dla twojego zamówienia wynosi 1 dzień.
+                    Po opłaceniu tego zamówienia zyskasz <b>@String.Format("{0:F}", Model.Total)</b> pkt. w programie lojalnościowym.
+                </p>
+            </div>
+            <div class="card-action">
+                <a></a>
+                <a class="waves-effect waves-light btn-large orange" asp-action="Data" asp-controller="Purchase">Kup Teraz</a>
+            </div>
+        </div>
+    </div>
+</div>
+

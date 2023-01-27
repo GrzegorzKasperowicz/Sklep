@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Sklep.Data.Model.Product>
+@{
+    ViewBag.Title = "Promocje";
+    Layout = "~/Views/Shared/_ShopLayout.cshtml";
+}
+<div class="container">
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th data-field="id">Foto</th>
+                    <th data-field="name">Nazwa</th>
+                    <th data-field="price">Cena</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href="@Url.Action("Details",new {id=product.IdProduct})">
+                                <img alt="@product.Title" src="@product.Picture"
+                                 height="60" width="50" />
+                            </a>
+                        </td>
+                        <td>@product.Title</td>
+                        <td>@product.Price.ToString("0.00")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

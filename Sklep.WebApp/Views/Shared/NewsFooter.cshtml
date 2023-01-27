@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Sklep.Data.Model.News>
+
+<!-- CSS  -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="~/lib/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+<link href="~/lib/materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+<div class="section">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col s12 m6">
+                <div class="row card-container">
+                    <div class="card-panel">
+                        <p>@item.Title</p>
+                        <a href="@Url.Action("Details","News",new {id=item.IdNews})">
+                            <img src="@item.Picture" height="175" width="175">
+                        </a>
+                        <p>@item.Description</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<br>
+<br>
+
+

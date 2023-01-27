@@ -1,0 +1,120 @@
+﻿@model Sklep.Data.Model.Order
+
+
+@{
+    ViewData["Title"] = "Data";
+    Layout = "~/Views/Shared/_CartLayout.cshtml";
+}
+
+<h6>Twoje Dane:</h6>
+<hr />
+
+
+
+<form asp-action="Data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col s6 m6">
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" placeholder="Imię" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col s6 m6">
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" placeholder="Nazwisko" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6 m6">
+            <div class="form-group">
+                <label asp-for="Street" class="control-label"></label>
+                <input asp-for="Street" class="form-control" placeholder="Ulica" />
+                <span asp-validation-for="Street" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col s3 m3">
+            <div class="form-group">
+                <label asp-for="HouseNumber" class="control-label"></label>
+                <input asp-for="HouseNumber" class="form-control" placeholder="Numer Domu" />
+                <span asp-validation-for="HouseNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col s3 m3">
+            <div class="form-group">
+                <label asp-for="ApartmentNumber" class="control-label"></label>
+                <input asp-for="ApartmentNumber" class="form-control" placeholder="Numer Mieszkania" />
+                <span asp-validation-for="ApartmentNumber" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6 m6">
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" placeholder="Miasto" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col s6 m6">
+            <div class="form-group">
+                <label asp-for="PostalCode" class="control-label"></label>
+                <input asp-for="PostalCode" class="form-control" placeholder="Kod Pocztowy" />
+                <span asp-validation-for="PostalCode" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6 m6">
+            <div class="form-group">
+                <label asp-for="Province" class="control-label"></label>
+                <input asp-for="Province" class="form-control" placeholder="Województwo" />
+                <span asp-validation-for="Province" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col s6 m6">
+            <div class="form-group">
+                <label asp-for="Country" class="control-label"></label>
+                <input asp-for="Country" class="form-control" placeholder="Państwo" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6 m6">
+            <div class="form-group">
+                <label asp-for="PhoneNumer" class="control-label"></label>
+                <input asp-for="PhoneNumer" class="form-control" placeholder="Telefon" />
+                <span asp-validation-for="PhoneNumer" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col s6 m6">
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" placeholder="Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <input type="submit" value="Zatwierdź" class="btn btn-primary orange" />
+    </div>
+</form>
+
+
+
+<div>
+    <a asp-action="Index">Wróć do koszyka</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

@@ -1,0 +1,42 @@
+﻿@using Sklep.Data.Model;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sklep Internetowy</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/lib/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="~/lib/materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+</head>
+
+<body>
+
+    <partial name="NavBar" />
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+
+            <div class="row center">
+                @RenderBody()
+            </div>
+
+        </div>
+    </div>
+    <footer class="page-footer orange">
+        <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="orange-text text-lighten-3">Grzegorz Kasperowicz</a>
+            </div>
+        </div>
+    </footer>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="~/lib/materialize/js/materialize.js"></script>
+    <script src="~/lib/materialize/js/materialize.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
